@@ -1,21 +1,27 @@
-import { Main, axios, Input, uuid, Button, Title } from "../components";
+import { Main, axios, Input, Button, Title } from "../components";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 export default function index() {
   const [username, setUsername] = useState("");
-  const [userId, setUserId] = useState(uuid.v4());
+
   const history = useRouter();
 
-  function handleSignIn(e) {
+  async function handleSignIn(e) {
     e.preventDefault();
 
-    if (username !== "") {
-      localStorage.setItem("username", username);
-      localStorage.setItem("userId", userId);
-      history.push("/controller");
+    if (username) {
+      try {
+        const response = await axios.post("/api/controller/create");
+        localStorage.setItem("userId", response.data);
+        localStorage.setItem("username", username);
+        window.navigator.vibrate(100);
+        history.push("/controller");
+      } catch (error) {
+        window.navigator.vibrate([70, 70, 70]);
+      }
     } else {
-      return;
+      window.navigator.vibrate([70, 70, 70]);
     }
   }
 
