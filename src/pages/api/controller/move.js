@@ -2,7 +2,7 @@ import { controllers } from "../../../components";
 
 export default function movimento(req, res) {
   try {
-    const { userId, username } = req.body;
+    const { userId, username, axis } = req.body;
     const ViGEmClient = require("vigemclient");
     const client = new ViGEmClient();
     client.connect();
@@ -12,8 +12,24 @@ export default function movimento(req, res) {
         controller.userId == parseInt(userId)
       ) {
         const control = controller.controller;
+        var x = 0;
+        var y = 0;
 
-        control.button.Y.setValue(true); // press Y button
+        if (!axis.x) {
+          x = 0;
+        } else {
+          x = axis.x / 70;
+        }
+        if (!axis.y) {
+          y = 0;
+        } else {
+          y = axis.y / 70;
+        }
+
+        control.axis.leftX.setValue(x);
+        control.axis.leftY.setValue(y);
+
+        // control.button.Y.setValue(true); // press Y button
 
         // Desconectar controle
         // control.disconnect();
@@ -40,10 +56,6 @@ export default function movimento(req, res) {
 // X
 // Y
 
-// leftX
-// leftY
-// rightX
-// rightY
 // leftTrigger
 // rightTrigger
 // dpadHorz

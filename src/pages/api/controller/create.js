@@ -11,9 +11,9 @@ export default function movimento(req, res) {
     newController.connect(opts);
     controllers.push({ username, userId, controller: newController });
 
-    // setTimeout(() => {
-    //   newController.disconnect();
-    // }, 8000);
+    setTimeout(() => {
+      newController.disconnect();
+    }, 70000);
 
     res.status(200).json(newController.index);
   } catch (error) {
