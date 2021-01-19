@@ -14,18 +14,48 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function controller() {
   const [username, setUsername] = useState("");
   const [userId, setUserId] = useState(0);
-  useEffect(() => {
+  useEffect(async () => {
     setUsername(localStorage.getItem("username"));
     setUserId(parseInt(localStorage.getItem("userId")));
+    document.addEventListener(`keydown`, (event) => {
+      const keyPressed = event.key;
+      if (
+        keyPressed === `w` ||
+        keyPressed === `a` ||
+        keyPressed === `s` ||
+        keyPressed === `d` ||
+        keyPressed === `j` ||
+        keyPressed === `k` ||
+        keyPressed === `l` ||
+        keyPressed === ` ` ||
+        keyPressed === `Escape` ||
+        keyPressed === `u` ||
+        keyPressed === `p` ||
+        keyPressed === `i` ||
+        keyPressed === `o` ||
+        keyPressed === `Enter` ||
+        keyPressed === `Backspace` ||
+        keyPressed === `h` ||
+        keyPressed === `ç`
+      ) {
+        console.log(keyPressed);
+        axios.post("/api/moveController", {
+          userId,
+          username,
+          keyPressed,
+          action: `down`,
+        });
+      }
+    });
   }, []);
 
   function handleMove(x) {
-    axios.post("/api/controller/move", { userId, username, axis: x });
+    axios.post("/api/moveController", { userId, username, axis: x });
   }
 
   return (
     <Main>
-      <Draggable defaultClassName="axis" onStart={() => false}>
+      {/* <Draggable defaultClassName="axis" onStart={() => false}>
         <Joystick
           disabled={true}
           size={100}
@@ -95,7 +125,7 @@ export default function controller() {
       </Draggable>
       <Draggable defaultClassName="button b">
         <span>B</span>
-      </Draggable>
+      </Draggable> */}
     </Main>
   );
 }

@@ -15,7 +15,6 @@
     "react-draggable": "^4.4.3",
     "react-joystick-component": "^1.4.0",
     "styled-components": "^5.2.1",
-    "uuid": "^8.3.2",
     "vigemclient": "^1.1.2"
   },
   "scripts": {

@@ -21,7 +21,7 @@ export default function index() {
     if (username) {
       try {
         localStorage.setItem("username", username);
-        await axios.post("/api/controller/create", {
+        await axios.post("/api/createController", {
           userId: parseInt(userId),
           username,
         });

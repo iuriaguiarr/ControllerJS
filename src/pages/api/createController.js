@@ -1,4 +1,4 @@
-import { controllers } from "../../../components";
+import { controllers } from "../../components";
 
 export default function movimento(req, res) {
   try {
@@ -17,7 +17,6 @@ export default function movimento(req, res) {
 
     res.status(200).json(newController.index);
   } catch (error) {
-    console.log(error);
     res.status(400).json(error);
   }
 }
