@@ -7,7 +7,26 @@ const GlobalStyle = createGlobalStyle`
     --orange: #f2a365;
     --white: #ececec;
     --purple:#3faef5;
-    --yellow:#e3b000; 
+    --yellow:#e3b000;
+
+    --dpad-radius: 17%;
+    --dpad-radius-in: 20%;
+    --dpad-fg: #ddd;
+    --dpad-fg-hover: #eee;
+    --dpad-bg: #fff;
+    --arrowcolor: #aaa;
+    --tri-sml-a: 13px;
+    --tri-sml-b: 19px;
+    --tri-lrg-a: 13px;
+    --tri-lrg-b: 19px;
+    --dpad-arrow-shift: 5px;
+    --dpad-arrow-move: 35%;
+
+    --c: #fff;
+    --c-t: rgba(0,0,0,.1);
+    --c-t-a: rgba(0,0,0,.6);
+    --c-h: #143cb9;
+ 
 }
 
 @font-face {

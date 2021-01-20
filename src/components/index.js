@@ -30,7 +30,32 @@ const acceptedKeys = [
   `ç`,
 ];
 
+const key = {
+  ArrowUp: false,
+  ArrowDown: false,
+  ArrowLeft: false,
+  ArrowRight: false,
+  w: false,
+  a: false,
+  s: false,
+  d: false,
+  j: false,
+  k: false,
+  l: false,
+  " ": false,
+  Escape: false,
+  u: false,
+  p: false,
+  i: false,
+  o: false,
+  Enter: false,
+  Backspace: false,
+  h: false,
+  ç: false,
+};
+
 export {
+  key,
   axios,
   Image,
   Input,

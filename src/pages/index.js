@@ -47,7 +47,7 @@ export default function index() {
           Insira o seu nome e comece ja a sua gameplay!
         </Welcome>
         <Input
-          value={username}
+          valor={username}
           onChange={(e) => {
             setUsername(e.target.value);
           }}

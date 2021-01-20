@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import Alien from "../../public/alien.svg";
 
@@ -46,16 +47,29 @@ const Input = styled.div`
 
 function InputBlock(props) {
   return (
-    <Input valor={props.value}>
-      <Alien />
-      <input
-        onChange={props.onChange}
-        spellCheck={false}
-        autoComplete="off"
-        value={props.value}
-        placeholder="Nome de jogador(a) *"
-      />
-    </Input>
+    <motion.div
+      style={{
+        width: `100%`,
+        display: `flex`,
+        justifyContent: `center`,
+        alignItems: `center`,
+      }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <Input valor={props.valor}>
+        <Alien />
+        <input
+          onChange={props.onChange}
+          spellCheck={false}
+          autoComplete="off"
+          value={props.valor}
+          placeholder="Nome de jogador(a) *"
+        />
+      </Input>
+    </motion.div>
   );
 }
 

@@ -14,7 +14,7 @@ const ButtonWrapper = styled.button`
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: 0.4s;
+  transition: 0.7s;
   max-height: 4.8rem;
   margin-bottom: 8rem;
 

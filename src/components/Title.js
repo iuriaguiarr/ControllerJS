@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { useRouter } from "next/router";
+import { motion } from "framer-motion";
 
 const TitleWrapper = styled.h1`
   font-family: "Cubic";
@@ -7,6 +9,7 @@ const TitleWrapper = styled.h1`
   font-weight: lighter;
   position: relative;
   margin-top: 8rem;
+  cursor: pointer;
 
   &.noMargin {
     margin-top: 2rem;
@@ -35,10 +38,33 @@ const TitleWrapper = styled.h1`
 `;
 
 function Title(props) {
+  const history = useRouter();
   if (props.margin) {
-    return <TitleWrapper>{props.children}</TitleWrapper>;
+    return (
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <TitleWrapper onClick={() => history.push(`/`)}>
+          {props.children}
+        </TitleWrapper>
+      </motion.div>
+    );
   } else {
-    return <TitleWrapper className="noMargin">{props.children}</TitleWrapper>;
+    return (
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <TitleWrapper onClick={() => history.push(`/`)} className="noMargin">
+          {props.children}
+        </TitleWrapper>{" "}
+      </motion.div>
+    );
   }
 }
 
