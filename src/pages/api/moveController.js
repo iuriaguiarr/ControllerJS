@@ -7,12 +7,12 @@ export default function movimento(req, res) {
     const client = new ViGEmClient();
     client.connect();
     controllers.forEach((controller, index) => {
-      console.log(keyPressed);
       if (
         controller.username == username &&
         controller.userId == parseInt(userId)
       ) {
         const control = controller.controller;
+
         switch (keyPressed) {
           case ` `:
             if (action === `down`) {
@@ -42,14 +42,118 @@ export default function movimento(req, res) {
               control.button.Y.setValue(false);
             }
             break;
-
+          case `Enter`:
+            if (action === `down`) {
+              control.button.START.setValue(true);
+            } else {
+              control.button.START.setValue(false);
+            }
+            break;
+          case `Backspace`:
+            if (action === `down`) {
+              control.button.BACK.setValue(true);
+            } else {
+              control.button.BACK.setValue(false);
+            }
+            break;
+          case `u`:
+            if (action === `down`) {
+              control.button.LEFT_THUMB.setValue(true);
+            } else {
+              control.button.LEFT_THUMB.setValue(false);
+            }
+            break;
+          case `p`:
+            if (action === `down`) {
+              control.button.RIGHT_THUMB.setValue(true);
+            } else {
+              control.button.RIGHT_THUMB.setValue(false);
+            }
+            break;
+          case `i`:
+            if (action === `down`) {
+              control.button.LEFT_SHOULDER.setValue(true);
+            } else {
+              control.button.LEFT_SHOULDER.setValue(false);
+            }
+            break;
+          case `o`:
+            if (action === `down`) {
+              control.button.RIGHT_SHOULDER.setValue(true);
+            } else {
+              control.button.RIGHT_SHOULDER.setValue(false);
+            }
+            break;
+          case `Escape`:
+            if (action === `down`) {
+              control.button.GUIDE.setValue(true);
+            } else {
+              control.button.GUIDE.setValue(false);
+            }
+            break;
+          case `w`:
+            if (action === `down`) {
+              control.axis.leftY.setValue(1);
+            } else {
+              control.axis.leftY.setValue(0);
+            }
+            break;
+          case `a`:
+            if (action === `down`) {
+              control.axis.leftX.setValue(-1);
+            } else {
+              control.axis.leftX.setValue(0);
+            }
+            break;
+          case `s`:
+            if (action === `down`) {
+              control.axis.leftY.setValue(-1);
+            } else {
+              control.axis.leftY.setValue(0);
+            }
+            break;
+          case `d`:
+            if (action === `down`) {
+              control.axis.leftX.setValue(1);
+            } else {
+              control.axis.leftX.setValue(0);
+            }
+            break;
+          case `ArrowUp`:
+            if (action === `down`) {
+              control.axis.leftY.setValue(1);
+            } else {
+              control.axis.leftY.setValue(0);
+            }
+            break;
+          case `ArrowLeft`:
+            if (action === `down`) {
+              control.axis.leftX.setValue(-1);
+            } else {
+              control.axis.leftX.setValue(0);
+            }
+            break;
+          case `ArrowDown`:
+            if (action === `down`) {
+              control.axis.leftY.setValue(-1);
+            } else {
+              control.axis.leftY.setValue(0);
+            }
+            break;
+          case `ArrowRight`:
+            if (action === `down`) {
+              control.axis.leftX.setValue(1);
+            } else {
+              control.axis.leftX.setValue(0);
+            }
+            break;
+          case `Esc`:
+            control.disconnect();
+            controllers.splice(index, 1);
+            break;
           default:
             break;
         }
-        setTimeout(() => {
-          control.disconnect();
-          controllers.splice(index, 1);
-        }, 30000);
       }
     });
 
@@ -59,25 +163,6 @@ export default function movimento(req, res) {
   }
 }
 
-// START        enter
-// BACK         Backspace
-// LEFT_THUMB    U
-// RIGHT_THUMB    P
-// LEFT_SHOULDER  I
-// RIGHT_SHOULDER   O
-// GUIDE          Escape
-// A              espaco
-// B              K
-// X              J
-// Y              L
-
-// leftTrigger    H
-// rightTrigger     Ç
-// dpadHorz
-// dpadVert
-//
-//
-//
 //
 // var x = 0;
 // var y = 0;

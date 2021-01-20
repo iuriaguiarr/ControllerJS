@@ -1,6 +1,5 @@
-import { faUser } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
+import Alien from "../../public/alien.svg";
 
 const Input = styled.div`
   width: calc(80% - 2rem);
@@ -12,36 +11,49 @@ const Input = styled.div`
   input {
     width: 100%;
     padding: 2rem;
-    padding-left: 5.5rem;
+    padding-left: 7rem;
     background-color: var(--white);
-    border-radius: 0.8rem;
-    font-weight: bold;
-
+    font-size: 1.7rem;
+    letter-spacing: 0.1rem;
+    font-weight: lighter;
     text-transform: uppercase;
   }
 
   svg {
+    fill: var(--black);
+    color: var(--black);
     position: absolute;
     left: 2rem;
     top: 0;
     bottom: 0;
     margin: auto 0;
-    width: 2rem;
+    width: 3rem;
     font-size: 2rem;
-    color: var(--black);
-    opacity: 0.7;
+    transition: 0.3s;
+    opacity: 0.55;
+  }
+
+  &:hover,
+  &:focus-within,
+  &:not([valor=""]) {
+    svg {
+      color: var(--yellow) !important;
+      fill: var(--yellow) !important;
+      opacity: 1;
+    }
   }
 `;
 
 function InputBlock(props) {
   return (
-    <Input>
-      <FontAwesomeIcon icon={faUser} />
+    <Input valor={props.value}>
+      <Alien />
       <input
         onChange={props.onChange}
         spellCheck={false}
         autoComplete="off"
-        placeholder="Nome"
+        value={props.value}
+        placeholder="Nome de jogador(a) *"
       />
     </Input>
   );

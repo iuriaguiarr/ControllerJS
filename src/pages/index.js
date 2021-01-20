@@ -1,4 +1,4 @@
-import { Main, axios, Input, Button, Title } from "../components";
+import { Main, axios, Input, Button, Title, Welcome } from "../components";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
@@ -37,14 +37,24 @@ export default function index() {
 
   return (
     <Main>
+      <Title margin={true}>
+        Controller<strong>JS</strong>
+      </Title>
+
       <form onSubmit={handleSignIn}>
-        <Title>Insira o seu nome</Title>
+        <Welcome>
+          Ola caro jogador(a), seja bem-vindo(a) ao <span>ControllerJS</span>.
+          Insira o seu nome e comece ja a sua gameplay!
+        </Welcome>
         <Input
+          value={username}
           onChange={(e) => {
             setUsername(e.target.value);
           }}
         />
-        <Button type="submit">Entrar</Button>
+        <Button valor={username} type="submit">
+          Comecar Gameplay!
+        </Button>
       </form>
     </Main>
   );

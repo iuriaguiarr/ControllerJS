@@ -6,12 +6,24 @@ const GlobalStyle = createGlobalStyle`
     --blue: #30475e;
     --orange: #f2a365;
     --white: #ececec;
+    --purple:#3faef5;
+    --yellow:#e3b000; 
 }
+
+@font-face {
+    font-family: "Cubic";
+    src: url("/cubic.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Aldo";
+    src: url("/aldo.ttf") format("truetype");
+}
+
   * {
     -webkit-font-smoothing: antialiased;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     text-rendering: optimizeLegibility;
-    font-family: "Cabin", sans-serif;
+    font-family: "Aldo";
     text-decoration: none;
     -webkit-user-select: initial;
     -khtml-user-select: initial;
@@ -44,8 +56,9 @@ const GlobalStyle = createGlobalStyle`
   html,
   body {
     scroll-behavior: smooth;
-    background:var(--background);
+    background:var(--black);
     font-size: 62.5%;
+    
   }
   
 `;
