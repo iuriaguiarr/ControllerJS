@@ -317,6 +317,57 @@ const MainWrapper = styled.main`
   .o-pad.right span.right:after {
     border-left-color: #333;
   }
+
+  .button {
+    width: 4vw;
+    height: 4vw;
+    background-color: transparent;
+    position: relative;
+
+    &:hover {
+      &::after {
+        background-color: #ccc;
+      }
+    }
+    &:active,
+    &.true {
+      &::after {
+        background-color: #aaa;
+        top: 0.2rem;
+        left: 0.2rem;
+      }
+    }
+
+    &::after {
+      content: attr(valor);
+      position: absolute;
+      font-size: 2.2rem;
+      background-color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      width: 4vw;
+      height: 4vw;
+      top: 0;
+      left: 0;
+      z-index: 2 !important;
+      transition: 0.3s;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: var(--yellow);
+      border-radius: 50%;
+      width: 4vw;
+      height: 4vw;
+      top: 0.4rem;
+      left: 0.4rem;
+      z-index: 1 !important;
+      transition: 0.3s;
+    }
+  }
 `;
 
 function Main(props) {

@@ -56,17 +56,12 @@ export default function controller() {
           <span className={`left ${keys[`a`]} ${keys[`ArrowLeft`]}`}></span>
         </nav>
       </div>
-
-      <motion.div
-        className="axis"
-        drag
-        dragConstraints={{
-          top: -50,
-          left: -50,
-          right: 50,
-          bottom: 50,
-        }}
-      />
+      <div className="buttonGroup">
+        <div className={`button ${keys[` `]}`} valor="A"></div>
+        <div className={`button ${keys[`k`]}`} valor="B"></div>
+        <div className={`button ${keys[`j`]}`} valor="X"></div>
+        <div className={`button ${keys[`l`]}`} valor="Y"></div>
+      </div>
     </Main>
   );
 }
