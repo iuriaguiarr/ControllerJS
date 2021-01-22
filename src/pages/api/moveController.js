@@ -6,8 +6,7 @@ export default function movimento(req, res) {
     const ViGEmClient = require("vigemclient");
     const client = new ViGEmClient();
     client.connect();
-    console.log(keyPressed);
-    console.log(action);
+
     controllers.forEach((controller, index) => {
       if (
         controller.username == username &&
