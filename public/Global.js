@@ -8,6 +8,10 @@ const GlobalStyle = createGlobalStyle`
     --white: #ececec;
     --purple:#3faef5;
     --yellow:#e3b000;
+    --buttonyellow:#f9c74f;
+    --buttongreen:#90be6d;
+    --buttonblue:#277da1;
+    --buttonred:#f94144;
 
     --dpad-radius: 17%;
     --dpad-radius-in: 20%;

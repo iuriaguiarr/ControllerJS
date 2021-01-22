@@ -6,6 +6,8 @@ export default function movimento(req, res) {
     const ViGEmClient = require("vigemclient");
     const client = new ViGEmClient();
     client.connect();
+    console.log(keyPressed);
+    console.log(action);
     controllers.forEach((controller, index) => {
       if (
         controller.username == username &&
@@ -147,11 +149,10 @@ export default function movimento(req, res) {
               control.axis.leftX.setValue(0);
             }
             break;
-          case `Esc`:
+
+          default:
             control.disconnect();
             controllers.splice(index, 1);
-            break;
-          default:
             break;
         }
       }

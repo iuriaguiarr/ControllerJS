@@ -5,6 +5,19 @@ const MainWrapper = styled.main`
   min-width: 100vw;
   min-height: 100vh;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .joystick {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 80vw;
+    margin: auto;
+    margin-top: 0;
+  }
 
   &.bg1 {
     background: url("/background1.gif") center;
@@ -38,6 +51,7 @@ const MainWrapper = styled.main`
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
+
     position: relative;
   }
 
@@ -54,10 +68,7 @@ const MainWrapper = styled.main`
     overflow: hidden;
     padding: 30px;
     text-align: center;
-    .d-pad {
-      margin-right: 40px;
-    }
-    .d-pad,
+
     .o-pad {
       display: inline-block;
     }
@@ -66,8 +77,8 @@ const MainWrapper = styled.main`
   .o-pad {
     position: relative;
     background: var(--dpad-fg);
-    width: 200px;
-    height: 200px;
+    width: 20rem;
+    height: 20rem;
     border-radius: 50%;
     overflow: hidden;
     &:after {
@@ -319,10 +330,12 @@ const MainWrapper = styled.main`
   }
 
   .button {
-    width: 4vw;
-    height: 4vw;
+    width: 4rem;
+    height: 4rem;
+
     background-color: transparent;
     position: relative;
+    -webkit-text-stroke: 0.07rem var(--black);
 
     &:hover {
       &::after {
@@ -332,7 +345,7 @@ const MainWrapper = styled.main`
     &:active,
     &.true {
       &::after {
-        background-color: #aaa;
+        background-color: #bbb;
         top: 0.2rem;
         left: 0.2rem;
       }
@@ -347,8 +360,8 @@ const MainWrapper = styled.main`
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-      width: 4vw;
-      height: 4vw;
+      width: 4rem;
+      height: 4rem;
       top: 0;
       left: 0;
       z-index: 2 !important;
@@ -360,12 +373,121 @@ const MainWrapper = styled.main`
       position: absolute;
       background-color: var(--yellow);
       border-radius: 50%;
-      width: 4vw;
-      height: 4vw;
+      width: 4rem;
+      height: 4rem;
       top: 0.4rem;
       left: 0.4rem;
       z-index: 1 !important;
       transition: 0.3s;
+    }
+  }
+
+  .buttonGroup {
+    position: relative;
+    width: 14rem;
+    height: 14rem;
+    margin: 0 8rem;
+    div {
+      position: absolute;
+    }
+    [valor="Y"] {
+      background-color: #000;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      color: var(--buttonyellow);
+      &::before {
+        background-color: var(--buttonyellow);
+      }
+    }
+    [valor="X"] {
+      top: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto 0;
+      color: var(--buttonblue);
+      &::before {
+        background-color: var(--buttonblue);
+      }
+    }
+    [valor="A"] {
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      color: var(--buttongreen);
+      &::before {
+        background-color: var(--buttongreen);
+      }
+    }
+    [valor="B"] {
+      top: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto 0;
+      color: var(--buttonred);
+      &::before {
+        background-color: var(--buttonred);
+      }
+    }
+    [valor="LT"] {
+      top: -4rem;
+      left: -4rem;
+      color: var(--blue);
+      &::before {
+        background-color: var(--blue);
+      }
+    }
+    [valor="RT"] {
+      top: -4rem;
+      right: -4rem;
+      color: var(--blue);
+      &::before {
+        background-color: var(--blue);
+      }
+    }
+    [valor="LS"] {
+      bottom: -4rem;
+      left: -4rem;
+      color: var(--blue);
+      &::before {
+        background-color: var(--blue);
+      }
+    }
+    [valor="RS"] {
+      bottom: -4rem;
+      right: -4rem;
+      color: var(--blue);
+      &::before {
+        background-color: var(--blue);
+      }
+    }
+  }
+
+  .middleButtons {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+    [valor="START"],
+    [valor="BACK"],
+    [valor="GUIDE"] {
+      color: var(--blue);
+
+      &::before {
+        width: 7rem;
+        background-color: var(--blue);
+      }
+      &::after {
+        width: 7rem;
+      }
+    }
+
+    [valor="GUIDE"] {
+      margin-top: -8rem;
     }
   }
 `;
@@ -377,7 +499,7 @@ function Main(props) {
   }, []);
 
   return (
-    <MainWrapper className={background}>
+    <MainWrapper className={`${background}`}>
       <section className="mainWrapper">{props.children}</section>
     </MainWrapper>
   );
