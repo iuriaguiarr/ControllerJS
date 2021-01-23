@@ -26,7 +26,12 @@ export default function index() {
           username,
         });
         window.navigator.vibrate(100);
-        history.push("/controller");
+        if( navigator.userAgent.match(/Android/i)){
+          history.push("/controller");
+        }else{
+          history.push("/controllerPC");
+        }
+        
       } catch (error) {
         window.navigator.vibrate([70, 70, 70]);
       }
