@@ -8,7 +8,7 @@ import {
   key,
 } from "../components";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { Joystick } from "react-joystick-component";
 
 export default function controller() {
   const [username, setUsername] = useState("");
@@ -46,20 +46,35 @@ export default function controller() {
     });
   }, []);
 
+  function handleMove(x) {
+    axios.post("/api/moveController", {
+      userId: parseInt(localStorage.getItem("userId")),
+      username: localStorage.getItem("username"),
+      axis: x,
+    });
+  }
+
   return (
     <Main>
       <Title margin={false}>
         C<strong>JS</strong>
       </Title>
       <div className="joystick">
-        <div className="set setbg white">
+        {/* <div className="set setbg white">
           <nav className="o-pad">
             <span className={`up ${keys[`w`]} ${keys[`ArrowUp`]}`}></span>
             <span className={`right ${keys[`d`]} ${keys[`ArrowRight`]}`}></span>
             <span className={`down ${keys[`s`]} ${keys[`ArrowDown`]}`}></span>
             <span className={`left ${keys[`a`]} ${keys[`ArrowLeft`]}`}></span>
           </nav>
-        </div>
+        </div> */}
+        <Joystick
+          size={140}
+          baseColor="#ececec"
+          stickColor="#30475e"
+          move={handleMove}
+        ></Joystick>
+
         <div className="middleButtons">
           <div
             onTouchStart={() => move(`Backspace`, `down`)}

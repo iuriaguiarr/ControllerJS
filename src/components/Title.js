@@ -47,9 +47,7 @@ function Title(props) {
         exit={{ opacity: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <TitleWrapper onClick={() => history.push(`/`)}>
-          {props.children}
-        </TitleWrapper>
+        <TitleWrapper>{props.children}</TitleWrapper>
       </motion.div>
     );
   } else {
@@ -60,9 +58,7 @@ function Title(props) {
         exit={{ opacity: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <TitleWrapper onClick={() => history.push(`/`)} className="noMargin">
-          {props.children}
-        </TitleWrapper>{" "}
+        <TitleWrapper className="noMargin">{props.children}</TitleWrapper>{" "}
       </motion.div>
     );
   }

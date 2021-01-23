@@ -14,7 +14,7 @@ const MainWrapper = styled.main`
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
-    width: 80vw;
+    width: 90vw;
     margin: auto;
     margin-top: 0;
   }
@@ -387,6 +387,7 @@ const MainWrapper = styled.main`
     width: 14rem;
     height: 14rem;
     margin: 0 8rem;
+    margin-right: 2rem;
     div {
       position: absolute;
     }
@@ -432,32 +433,32 @@ const MainWrapper = styled.main`
       }
     }
     [valor="LT"] {
-      top: -4rem;
-      left: -4rem;
+      top: -3rem;
+      left: -3rem;
       color: var(--blue);
       &::before {
         background-color: var(--blue);
       }
     }
     [valor="RT"] {
-      top: -4rem;
-      right: -4rem;
+      top: -3rem;
+      right: -3rem;
       color: var(--blue);
       &::before {
         background-color: var(--blue);
       }
     }
     [valor="LS"] {
-      bottom: -4rem;
-      left: -4rem;
+      bottom: -3rem;
+      left: -3rem;
       color: var(--blue);
       &::before {
         background-color: var(--blue);
       }
     }
     [valor="RS"] {
-      bottom: -4rem;
-      right: -4rem;
+      bottom: -3rem;
+      right: -3rem;
       color: var(--blue);
       &::before {
         background-color: var(--blue);

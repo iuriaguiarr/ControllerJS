@@ -11,6 +11,7 @@ export default function MyApp({ Component, pageProps }) {
         />
         <link href="/cubic.ttf" rel="stylesheet" />
         <link rel="shortcut icon" href="/favicon.ico" />
+        <meta name="mobile-web-app-capable" content="yes" />
         <title>ControllerJS</title>
       </Head>
       <Global />
