@@ -68,6 +68,9 @@ const MainWrapper = styled.main`
     overflow: hidden;
     padding: 30px;
     text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 17vw;
 
     .o-pad {
       display: inline-block;
@@ -77,8 +80,8 @@ const MainWrapper = styled.main`
   .o-pad {
     position: relative;
     background: var(--dpad-fg);
-    width: 20rem;
-    height: 20rem;
+    width: 13rem;
+    height: 13rem;
     border-radius: 50%;
     overflow: hidden;
     &:after {

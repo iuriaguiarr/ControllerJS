@@ -68,14 +68,6 @@ export default function controller() {
         C<strong>JS</strong>
       </Title>
       <div className="joystick">
-        {/* <div className="set setbg white">
-          <nav className="o-pad">
-            <span className={`up ${keys[`w`]} ${keys[`ArrowUp`]}`}></span>
-            <span className={`right ${keys[`d`]} ${keys[`ArrowRight`]}`}></span>
-            <span className={`down ${keys[`s`]} ${keys[`ArrowDown`]}`}></span>
-            <span className={`left ${keys[`a`]} ${keys[`ArrowLeft`]}`}></span>
-          </nav>
-        </div> */}
         <Joystick
           size={140}
           baseColor="#ececec"
@@ -83,6 +75,15 @@ export default function controller() {
           move={handleMove}
           stop={handleStop}
         ></Joystick>
+
+        <div className="set setbg white">
+          <nav className="o-pad">
+            <span className={`up ${keys[`w`]} ${keys[`ArrowUp`]}`}></span>
+            <span className={`right ${keys[`d`]} ${keys[`ArrowRight`]}`}></span>
+            <span className={`down ${keys[`s`]} ${keys[`ArrowDown`]}`}></span>
+            <span className={`left ${keys[`a`]} ${keys[`ArrowLeft`]}`}></span>
+          </nav>
+        </div>
 
         <div className="middleButtons">
           <div
