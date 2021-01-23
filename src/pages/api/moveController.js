@@ -29,6 +29,13 @@ export default function movimento(req, res) {
               control.button.X.setValue(false);
             }
             break;
+          case `J`:
+            if (action === `down`) {
+              control.button.X.setValue(true);
+            } else {
+              control.button.X.setValue(false);
+            }
+            break;
           case `k`:
             if (action === `down`) {
               control.button.B.setValue(true);
@@ -36,7 +43,21 @@ export default function movimento(req, res) {
               control.button.B.setValue(false);
             }
             break;
+          case `K`:
+            if (action === `down`) {
+              control.button.B.setValue(true);
+            } else {
+              control.button.B.setValue(false);
+            }
+            break;
           case `l`:
+            if (action === `down`) {
+              control.button.Y.setValue(true);
+            } else {
+              control.button.Y.setValue(false);
+            }
+            break;
+          case `L`:
             if (action === `down`) {
               control.button.Y.setValue(true);
             } else {
@@ -64,6 +85,13 @@ export default function movimento(req, res) {
               control.button.LEFT_THUMB.setValue(false);
             }
             break;
+          case `U`:
+            if (action === `down`) {
+              control.button.LEFT_THUMB.setValue(true);
+            } else {
+              control.button.LEFT_THUMB.setValue(false);
+            }
+            break;
           case `p`:
             if (action === `down`) {
               control.button.RIGHT_THUMB.setValue(true);
@@ -71,6 +99,14 @@ export default function movimento(req, res) {
               control.button.RIGHT_THUMB.setValue(false);
             }
             break;
+          case `P`:
+            if (action === `down`) {
+              control.button.RIGHT_THUMB.setValue(true);
+            } else {
+              control.button.RIGHT_THUMB.setValue(false);
+            }
+            break;
+
           case `i`:
             if (action === `down`) {
               control.button.LEFT_SHOULDER.setValue(true);
@@ -78,7 +114,21 @@ export default function movimento(req, res) {
               control.button.LEFT_SHOULDER.setValue(false);
             }
             break;
+          case `I`:
+            if (action === `down`) {
+              control.button.LEFT_SHOULDER.setValue(true);
+            } else {
+              control.button.LEFT_SHOULDER.setValue(false);
+            }
+            break;
           case `o`:
+            if (action === `down`) {
+              control.button.RIGHT_SHOULDER.setValue(true);
+            } else {
+              control.button.RIGHT_SHOULDER.setValue(false);
+            }
+            break;
+          case `O`:
             if (action === `down`) {
               control.button.RIGHT_SHOULDER.setValue(true);
             } else {
@@ -150,8 +200,8 @@ export default function movimento(req, res) {
             break;
 
           default:
-            control.disconnect();
-            controllers.splice(index, 1);
+            // control.disconnect();
+            // controllers.splice(index, 1);
             break;
         }
       }
