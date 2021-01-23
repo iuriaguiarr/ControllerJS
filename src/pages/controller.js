@@ -131,29 +131,42 @@ export default function controller() {
           ></div>
 
           <div
+            onTouchStart={() => move(`h`, `down`)}
+            onTouchEnd={() => move(`h`, `up`)}
+            className={`button ${keys[`h`]}`}
+            valor="LT"
+          ></div>
+          <div
+            onTouchStart={() => move(`ç`, `down`)}
+            onTouchEnd={() => move(`ç`, `up`)}
+            className={`button ${keys[`ç`]}`}
+            valor="RT"
+          ></div>
+
+          <div
             onTouchStart={() => move(`u`, `down`)}
             onTouchEnd={() => move(`u`, `up`)}
             className={`button ${keys[`u`]}`}
-            valor="LT"
+            valor="LB"
           ></div>
           <div
             onTouchStart={() => move(`p`, `down`)}
             onTouchEnd={() => move(`p`, `up`)}
             className={`button ${keys[`p`]}`}
-            valor="RT"
+            valor="RB"
           ></div>
 
           <div
             onTouchStart={() => move(`i`, `down`)}
             onTouchEnd={() => move(`i`, `up`)}
             className={`button ${keys[`i`]}`}
-            valor="LS"
+            valor="L"
           ></div>
           <div
             onTouchStart={() => move(`o`, `down`)}
             onTouchEnd={() => move(`o`, `up`)}
             className={`button ${keys[`o`]}`}
-            valor="RS"
+            valor="R"
           ></div>
         </div>
       </div>

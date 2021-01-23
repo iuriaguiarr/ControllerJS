@@ -448,7 +448,7 @@ const MainWrapper = styled.main`
         background-color: var(--blue);
       }
     }
-    [valor="LS"] {
+    [valor="LB"] {
       bottom: -3rem;
       left: -3rem;
       color: var(--blue);
@@ -456,8 +456,24 @@ const MainWrapper = styled.main`
         background-color: var(--blue);
       }
     }
-    [valor="RS"] {
+    [valor="RB"] {
       bottom: -3rem;
+      right: -3rem;
+      color: var(--blue);
+      &::before {
+        background-color: var(--blue);
+      }
+    }
+    [valor="L"] {
+      bottom: -9rem;
+      left: -3rem;
+      color: var(--blue);
+      &::before {
+        background-color: var(--blue);
+      }
+    }
+    [valor="R"] {
+      bottom: -9rem;
       right: -3rem;
       color: var(--blue);
       &::before {

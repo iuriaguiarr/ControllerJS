@@ -33,6 +33,10 @@ const acceptedKeys = [
   `P`,
   `I`,
   `O`,
+  `ç`,
+  `Ç`,
+  `h`,
+  `H`,
   ` `,
   `Escape`,
   `Enter`,
@@ -62,6 +66,10 @@ const key = {
   P: false,
   I: false,
   O: false,
+  ç: false,
+  Ç: false,
+  h: false,
+  H: false,
   " ": false,
   Escape: false,
   u: false,
@@ -70,7 +78,6 @@ const key = {
   o: false,
   Enter: false,
   Backspace: false,
-  
 };
 
 export {

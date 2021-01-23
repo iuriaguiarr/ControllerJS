@@ -33,6 +33,34 @@ export default function movimento(req, res) {
           control.axis.leftY.setValue(y);
         } else {
           switch (keyPressed) {
+            case `h`:
+              if (action === `down`) {
+                control.axis.leftTrigger.setValue(true);
+              } else {
+                control.axis.leftTrigger.setValue(false);
+              }
+              break;
+            case `H`:
+              if (action === `down`) {
+                control.axis.leftTrigger.setValue(true);
+              } else {
+                control.axis.leftTrigger.setValue(false);
+              }
+              break;
+            case `ç`:
+              if (action === `down`) {
+                control.axis.rightTrigger.setValue(true);
+              } else {
+                control.axis.rightTrigger.setValue(false);
+              }
+              break;
+            case `Ç`:
+              if (action === `down`) {
+                control.axis.rightTrigger.setValue(true);
+              } else {
+                control.axis.rightTrigger.setValue(false);
+              }
+              break;
             case ` `:
               if (action === `down`) {
                 control.button.A.setValue(true);
