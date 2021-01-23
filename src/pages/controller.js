@@ -46,18 +46,16 @@ export default function controller() {
     });
   }, []);
 
-  function handleMove(x) {
-    axios.post("/api/moveController", {
+  async function handleMove(x) {
+    await axios.post("/api/moveController", {
       userId: parseInt(localStorage.getItem("userId")),
       username: localStorage.getItem("username"),
       axis: x,
     });
   }
 
-  function handleStop(x) {
-    x.x = 0;
-    x.y = 0;
-    axios.post("/api/moveController", {
+  async function handleStop(x) {
+    await axios.post("/api/moveController", {
       userId: parseInt(localStorage.getItem("userId")),
       username: localStorage.getItem("username"),
       axis: x,

@@ -18,12 +18,12 @@ export default function movimento(req, res) {
           var x = 0;
           var y = 0;
 
-          if (!axis.x) {
+          if (axis.x == null) {
             x = 0;
           } else {
             x = axis.x / 70;
           }
-          if (!axis.y) {
+          if (axis.y == null) {
             y = 0;
           } else {
             y = axis.y / 70;
