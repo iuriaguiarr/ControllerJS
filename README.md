@@ -2,6 +2,8 @@
 
 A web joystick to be used on mobile or desktop devices, entirely developed in JavaScript.
 
+It consists of emulating an Xbox 360 controller on the computer running the server, after connecting another computer, or a mobile device. Thus creating web joysticks.
+
 ## For this project the following technologies were used:
 * React: For creating interfaces;
 * NextJS: In this case used to simplify the code;
